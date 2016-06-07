@@ -4,7 +4,7 @@ angular.module("sports")
 
     console.log("controller working" );
 
-    create.sendPin = function() {
+    create.sendPin = function(pinToAdd) {
       console.log("sendPin Function");
       $location.path("#/pins");
     }; //end of sendPin
