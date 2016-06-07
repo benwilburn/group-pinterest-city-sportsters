@@ -1,5 +1,5 @@
 angular.module("sports")
-  .controller("CreateEditCtrl", function() {
+  .controller("BoardCtrl", function() {
 
     console.log("test" );
 
