@@ -15,3 +15,4 @@ angular.module("sports")
     };//end of cancelPin
 
   });//end of controller
+

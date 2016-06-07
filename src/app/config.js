@@ -2,7 +2,10 @@ angular.module("sports")
 	.config(($routeProvider) => {
   $routeProvider
 		// Authentication routes
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     .when("/", {
       templateUrl: "app/auth/login.html",
       controller: "LoginCtrl",
