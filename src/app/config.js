@@ -39,5 +39,6 @@ angular.module('sports')
 				templateUrl: 'app/newBoard/newBoard.html',
 				controller: 'BoardCtrl',
 				controllerAs: 'board'
-			});
+			})
+      .otherwise('/');
 	});
