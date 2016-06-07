@@ -5,12 +5,12 @@ angular.module('sports')
 			.when('/', {
 				templateUrl: 'app/auth/login.html',
 				controller: 'LoginCtrl',
-				controllerAs: 'login'
+				controllerAs: 'auth'
 			})
 			.when('/logout', {
 				template: '',
 				controller: 'LogoutCtrl',
-				controllerAs: 'logout'
+				controllerAs: 'auth'
 			})
 			// Pin display route
 			.when('/pins', {
@@ -39,5 +39,6 @@ angular.module('sports')
 				templateUrl: 'app/newBoard/newBoard.html',
 				controller: 'BoardCtrl',
 				controllerAs: 'board'
-			});
+			})
+      .otherwise('/');
 	});
