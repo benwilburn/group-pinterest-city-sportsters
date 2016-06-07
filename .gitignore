@@ -4,3 +4,4 @@ dist
 src/lib
 .floo
 .flooignore
+npm-debug.log
