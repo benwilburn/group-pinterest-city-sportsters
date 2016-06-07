@@ -1,5 +1,10 @@
 
 <h1>new pin page</h1>
 
-<a href="#/pins" class="btn">Submit</a>
+<form ng-submit="create.sendPin()">
+<button type="submit" class="btn">Submit</button>
+</form>
+
+<button ng-click="create.cancelPin()" class="btn">Cancel</button>
+
 
