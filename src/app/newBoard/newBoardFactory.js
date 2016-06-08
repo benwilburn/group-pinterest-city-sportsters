@@ -4,7 +4,7 @@ angular.module("sports")
     let boardData = null;
 
     $http.get("https://project-907408699296850865.firebaseio.com/board.json")
-      .then((res)=> {boardData = res.data};);
+      .then((res)=> {boardData = res.data});
 
     return {
       getBoardData: () => {
