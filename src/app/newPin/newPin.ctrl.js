@@ -12,20 +12,20 @@ angular.module("sports")
       "sports", "animals", "fruit"
     ];
 
-    //sample object being created from the form. 
+    //sample object being created from the form.
     create.pin = {
       user: "-KJgEf10nvtn1qpxghVE", //authFactory.getUser(token)
-      name: "", 
-      url: "", 
-      desc: "", 
+      name: "",
+      url: "",
+      desc: "",
       board: "" //newBoardFactory.giveMegantheBoard
     };
 
     create.sendPin = function() {
       console.log("sendPin Function", create.pin);
-      
+
       newPinFactory.postNewPin(create.pin)
-        .then(() => {$location.path("#/pins");});  
+        .then(() => {$location.path("#/pins");});
     }; //end of sendPin
 
     create.cancelPin = function() {
