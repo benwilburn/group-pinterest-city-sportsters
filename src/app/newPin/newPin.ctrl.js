@@ -1,11 +1,16 @@
 angular.module("sports")
-  .controller("CreateEditCtrl", function(newPinFactory, $location) {
+  .controller("CreateEditCtrl", function(newPinFactory, AuthFactory, $scope, $location) {
     const create = this;
-    const title = "Create A New Pin";
+    $scope.title = "Create A New Pin";
 
-    // setTimeout(function() {
-    //   $("select").material_select();
-    // }, 100);
+
+    //$scope.title = "create a new board"
+    //
+    //in html: $scope.title
+    
+
+    const currentUser = AuthFactory.getUser("uid");
+    console.log("current", currentUser);
 
 
     create.boards = [ //boardFactory.getBoardArray();
@@ -14,9 +19,9 @@ angular.module("sports")
 
     //sample object being created from the form. 
     create.pin = {
-      user: "-KJgEf10nvtn1qpxghVE", //authFactory.getUser(token)
+      // user: currentUser.uid,
       name: "", 
-      url: "", 
+      imageUrl: "", 
       desc: "", 
       board: "" //this will be the board ID, not a board name.
     };
