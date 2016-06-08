@@ -16,7 +16,7 @@ angular.module("sports")
       console.log("sendBoard Function", board.board);
 
       newBoardFactory.postNewBoard(board.board)
-        .then(() => {$location.path("#/pins");});
+        .then(() => {$location.path("/pins");});
     }; //end of sendBoard
 
     board.cancelBoard = function() {

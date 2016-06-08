@@ -24,6 +24,7 @@ angular.module("sports")
       const currentUser = AuthFactory.getUser();
       create.pin.user = currentUser.uid;
       create.pin.userName= currentUser.username;
+      create.pin.boardName=create.boards[create.pin.board].name;
       console.log("current object", create.pin);
 
       newPinFactory.postNewPin(create.pin)
