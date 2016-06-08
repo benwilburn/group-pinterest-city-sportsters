@@ -1,14 +1,15 @@
 angular.module("sports")
   .factory("newBoardFactory", function($http, $timeout) {
 
-  let boardData = null
+    let boardData = null;
 
-  $http.get("https://project-907408699296850865.firebaseio.com/board.json")
-    .then((res)=> {boardData = res.data})
+    $http.get("https://project-907408699296850865.firebaseio.com/board.json")
+      .then((res)=> {boardData = res.data};);
+
     return {
       getBoardData: () => {
-        return boardData
-    },
+        return boardData;
+      },
 
       postNewBoard: (objectToAdd) => {
         return $timeout()
