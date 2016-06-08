@@ -24,10 +24,10 @@ angular.module("sports")
       const currentUser = AuthFactory.getUser();
       create.pin.user = currentUser.uid;
       create.pin.userName= currentUser.username;
-      console.log("current object", create.pin);
+      console.log("current object", create.pin)
 
       newPinFactory.postNewPin(create.pin)
-        .then(() => {$location.path("#/pins");});  
+        .then(() => {$location.path("#/pins");});
     }; //end of sendPin
 
     create.cancelPin = function() {

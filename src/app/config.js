@@ -14,6 +14,7 @@ angular.module("sports")
       controllerAs: "auth"
 
     })
+
 			// Pin display route
     .when("/pins", {
       templateUrl: "app/pins/pins.html",
