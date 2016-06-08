@@ -8,24 +8,23 @@ angular.module("sports")
     return {
 
       postNewPin: (objectToAdd) => {
-        return $timeout()
-          //http request
-         .then($http.post("https://project-907408699296850865.firebaseio.com/pins.json", objectToAdd)
-          .then(
-            () => {console.log("success");},
-            e => {console.log(e);}
-            )
-         );
+        // return $timeout(function() {
+          return $http.post("https://project-907408699296850865.firebaseio.com/pins.json", objectToAdd);
+            // .then(
+            // () => {console.log("success");},
+            // e => {console.log(e);}
+            // );
+        // });
       }, 
 
       getPinToEdit: (id) => {
         return $http.get(`https://project-907408699296850865.firebaseio.com/pins/${id}.json`)
-            .then(
-            (data) => {
-              console.log("success", data.data);
-              currentPin = data.data;
-              return currentPin;
-            }, e => {console.log(e);});
+      //       .then(
+      //       (data) => {
+      //         console.log("success", data.data);
+      //         currentPin = data.data;
+      //         return currentPin;
+      //       }, e => {console.log(e);});
       }
 
     }; //end of return

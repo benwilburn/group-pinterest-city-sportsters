@@ -27,12 +27,12 @@ angular.module("sports")
       console.log("current object", create.pin);
 
       newPinFactory.postNewPin(create.pin)
-        .then(() => {$location.path("#/pins");});
+        .then(() => {console.log("about to switch"); $location.path("/pins");});
     }; //end of sendPin
 
     create.cancelPin = function() {
       console.log("cancelPin function");
-      $location.path("#/pins");
+      $location.path("/pins");
     };//end of cancelPin
 
   });//end of controller

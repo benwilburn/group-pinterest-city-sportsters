@@ -36,7 +36,7 @@
         </div>
         <div class="input-field col s10">
           <select id="boards" ng-model="create.pin.board">
-            <option ng-repeat="board in create.boards" value="{{board}}">{{board.name}}</option>
+            <option ng-repeat="(id, board) in create.boards" value="{{id}}">{{board.name}}</option>
           </select>
         </div>
       </div>
