@@ -10,8 +10,8 @@ angular.module("sports")
     newBoardFactory.getBoardData().then(boards => create.boards = boards); 
 
     create.sendPin =  function () {
-      console.log("edit pin function", create.pin);  
-      //make a patch function. 
+      newPinFactory.editPin(id, create.pin)
+        .then(() => {$location.path("/pins");});  
 
     };
 
