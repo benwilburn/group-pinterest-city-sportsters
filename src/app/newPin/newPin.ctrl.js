@@ -1,14 +1,14 @@
 angular.module("sports")
-  .controller("CreateEditCtrl", function(newPinFactory, AuthFactory, $scope, $location) {
+  .controller("CreateEditCtrl", function(newPinFactory, newBoardFactory, AuthFactory, $scope, $location) {
     const create = this;
     $scope.title = "Create A New Pin";
 
    
-    
+    var boardDataGetter =  newBoardFactory.getBoardData();
 
-    create.boards = [ //boardFactory.getBoardArray();
-      "sports", "animals", "fruit"
-    ];
+   boardDataGetter.then(boards => {create.boards = boards; console.log("boards", create.boards ); });
+    
+     
 
     //sample object being created from the form. 
     // create.pin = {
@@ -24,7 +24,7 @@ angular.module("sports")
       const currentUser = AuthFactory.getUser();
       create.pin.user = currentUser.uid;
       create.pin.userName= currentUser.username;
-      console.log("current object", create.pin)
+      console.log("current object", create.pin);
 
       newPinFactory.postNewPin(create.pin)
         .then(() => {$location.path("#/pins");});

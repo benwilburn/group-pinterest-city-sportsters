@@ -3,32 +3,25 @@ angular.module("sports")
 
     let boardData = null;
 
-    $http.get("https://project-907408699296850865.firebaseio.com/board.json")
-      .then((res)=> {boardData = res.data});
 
     return {
       getBoardData: () => {
-        return boardData;
+        return $timeout(function() {
+          return $http.get("https://project-907408699296850865.firebaseio.com/board.json")
+            .then((res)=> {boardData = res.data; 
+              console.log("boardData", boardData);
+              return boardData;});
+        }, 0);
       },
 
       postNewBoard: (objectToAdd) => {
-        return $timeout()
-         .then($http.post("https://project-907408699296850865.firebaseio.com/board.json", objectToAdd)
+        return $timeout(function() {
+         return $http.post("https://project-907408699296850865.firebaseio.com/board.json", objectToAdd)
           .then(
             () => {console.log("success");},
             e => {console.log(e);}
-            )
-         );
+            );
+        }, 0);
       }
     }; //end of return
   });
-
-
-
-  //send new board function. this POSTS to the board object.
-  //get the boards function. put both functions inside the return object- so it needs to say return {
-  //
-  //postNewBoard: function(boardToPost) {
-  //}
-  //giveMeganTheBoardObjects <--this is where the function you've already written goes.
-  //}

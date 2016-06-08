@@ -1,7 +1,10 @@
 angular.module("sports")
   .factory("newPinFactory", function($http, AuthFactory, $timeout) {
+    
+
     let currentPin= "";
 
+    
     return {
 
       postNewPin: (objectToAdd) => {
@@ -16,15 +19,13 @@ angular.module("sports")
       }, 
 
       getPinToEdit: (id) => {
-        return $timeout()
-          .then($http.get(`https://project-907408699296850865.firebaseio.com/pins/${id}.json`)
+        return $http.get(`https://project-907408699296850865.firebaseio.com/pins/${id}.json`)
             .then(
             (data) => {
               console.log("success", data.data);
               currentPin = data.data;
               return currentPin;
-            }, e => {console.log(e);})
-          );
+            }, e => {console.log(e);});
       }
 
     }; //end of return
