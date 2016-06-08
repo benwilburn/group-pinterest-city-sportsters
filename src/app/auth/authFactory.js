@@ -4,9 +4,11 @@ angular.module('sports')
     let currentUser = null;
 
     firebase.auth().onAuthStateChanged((user) => {
+      console.log("firebase auth state changed");
       if (user) {
+        console.log("auth object found");
         var users = null;
-        $http.get('http://project-907408699296850865.firebaseio.com/auth.json')
+        $http.get('https://project-907408699296850865.firebaseio.com/auth.json')
           .then((res) => {
             users = res.data;
             return users;
@@ -24,9 +26,19 @@ angular.module('sports')
 
     return {
 
-      verifyLogin: function(email, password) {
+      verifyLogin: function(user) {
        return firebase.auth()
-          .signInWithEmailAndPassword(email, password);
+          .signInWithEmailAndPassword(user.email, user.password);
+      },
+
+      registerNew: function(user) {
+        return firebase.auth()
+          .createUserWithEmailAndPassword(user.email, user.password);
+      },
+
+      createUserObject: function(res, user) {
+        user.uid = res.uid;
+        $http.post("https://project-907408699296850865.firebaseio.com/auth.json", user);
       },
 
       getUser: function(param) {
