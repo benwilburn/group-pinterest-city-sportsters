@@ -8,10 +8,10 @@ angular.module("sports")
         return $timeout()
          .then($http.post("https://project-907408699296850865.firebaseio.com/pins.json", objectToAdd)
           .then(
-            () => {console.log("success");}, 
+            () => {console.log("success");},
             e => {console.log(e);}
             )
          );
-      } 
+      }
     }; //end of return
   });
