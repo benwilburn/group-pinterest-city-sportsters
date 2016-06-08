@@ -1,6 +1,6 @@
 
 
-<h1 ng-model="create.title">{{create.title}}</h1>
+<h1 ng-scope="$scope.title">{{title}}</h1>
 <div class="container">
   <div class="row">
     <form name="pinForm" ng-submit="create.sendPin()">
@@ -8,7 +8,7 @@
       <!-- pin URL -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="pinUrl" type="text" name="pinUrl" ng-model="create.pin.url">
+          <input id="pinUrl" type="text" name="pinUrl" ng-model="create.pin.imageUrl">
           <label for="pinUrl">Pin Image URL</label>
         </div>
       </div>
@@ -36,7 +36,7 @@
         </div>
         <div class="input-field col s10">
           <select id="boards" ng-model="create.pin.board">
-            <option ng-repeat="board in create.boards" value="{{board}}">{{board}}</option>
+            <option ng-repeat="(id, board) in create.boards" value="{{id}}">{{board.name}}</option>
           </select>
         </div>
       </div>
@@ -53,4 +53,5 @@
     </div>
   </div>
 </div>
+
 
