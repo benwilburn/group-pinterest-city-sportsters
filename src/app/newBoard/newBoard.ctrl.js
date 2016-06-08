@@ -21,7 +21,7 @@ angular.module("sports")
 
     board.cancelBoard = function() {
       console.log("cancelBoard function");
-      $location.path("#/pins");
+      $location.path("/pins");
     };//end of cancelBoard
 
   });//end of controller

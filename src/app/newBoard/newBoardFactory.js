@@ -9,7 +9,6 @@ angular.module("sports")
         return $timeout(function() {
           return $http.get("https://project-907408699296850865.firebaseio.com/board.json")
             .then((res)=> {boardData = res.data; 
-              console.log("boardData", boardData);
               return boardData;});
         }, 0);
       },
