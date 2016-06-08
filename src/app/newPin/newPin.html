@@ -1,6 +1,6 @@
 
 
-<h1>Create a New Pin</h1>
+<h1 ng-model="create.title">{{create.title}}</h1>
 <div class="container">
   <div class="row">
     <form name="pinForm" ng-submit="create.sendPin()">
@@ -35,9 +35,8 @@
           <label for="boards">Select a Board</label>
         </div>
         <div class="input-field col s10">
-          <select id="boards">
-            <!-- <option value="" disabled selected>choose a board</option> -->
-            <option ng-repeat="board in create.boards" ng-model="board" value="board" placeholder"">{{board}}</option>
+          <select id="boards" ng-model="create.pin.board">
+            <option ng-repeat="board in create.boards" value="{{board}}">{{board}}</option>
           </select>
         </div>
       </div>

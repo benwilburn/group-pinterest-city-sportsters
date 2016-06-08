@@ -1,28 +1,31 @@
 angular.module("sports")
-  .controller("CreateEditCtrl", function($location) {
+  .controller("CreateEditCtrl", function(newPinFactory, $location) {
     const create = this;
+    const title = "Create A New Pin";
 
-    setTimeout(function() {
-      $("select").material_select();
-    }, 100);
+    // setTimeout(function() {
+    //   $("select").material_select();
+    // }, 100);
 
 
-    create.boards = [
+    create.boards = [ //boardFactory.getBoardArray();
       "sports", "animals", "fruit"
     ];
 
-    // create.pin = {
-    //   name: "", 
-    //   url: "", 
-    //   desc: "", 
-    //   board: ""
-    // };
+    //sample object being created from the form. 
+    create.pin = {
+      user: "-KJgEf10nvtn1qpxghVE", //authFactory.getUser(token)
+      name: "", 
+      url: "", 
+      desc: "", 
+      board: "" //this will be the board ID, not a board name.
+    };
 
-    console.log("controller working" );
-
-    create.sendPin = function(pinToAdd) {
+    create.sendPin = function() {
       console.log("sendPin Function", create.pin);
-      // $location.path("#/pins");
+      
+      newPinFactory.postNewPin(create.pin)
+        .then(() => {$location.path("#/pins");});  
     }; //end of sendPin
 
     create.cancelPin = function() {
