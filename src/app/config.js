@@ -7,11 +7,6 @@ angular.module("sports")
       controller: "LoginCtrl",
       controllerAs: "auth"
     })
-    .when("/logout", {
-      template: "",
-      controller: "LogoutCtrl",
-      controllerAs: "auth"
-    })
 			// Pin display route
     .when("/pins", {
       templateUrl: "app/pins/pins.html",
