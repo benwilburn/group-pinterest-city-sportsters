@@ -6,11 +6,13 @@ angular.module("sports")
       templateUrl: "app/auth/login.html",
       controller: "LoginCtrl",
       controllerAs: "auth"
+
     })
     .when("/logout", {
       template: "",
       controller: "LogoutCtrl",
       controllerAs: "auth"
+
     })
 			// Pin display route
     .when("/pins", {
@@ -26,7 +28,7 @@ angular.module("sports")
     })
     .when("/pins/edit/:id", {
       templateUrl: "app/newPin/newPin.html",
-      controller: "CreateEditCtrl",
+      controller: "EditCtrl",
       controllerAs: "create"
     })
 			// Board create/edit routes

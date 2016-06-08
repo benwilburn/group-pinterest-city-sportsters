@@ -3,32 +3,29 @@ angular.module("sports")
     const create = this;
     $scope.title = "Create A New Pin";
 
-
-    //$scope.title = "create a new board"
-    //
-    //in html: $scope.title
+   
     
-
-    const currentUser = AuthFactory.getUser("uid");
-    console.log("current", currentUser);
-
 
     create.boards = [ //boardFactory.getBoardArray();
       "sports", "animals", "fruit"
     ];
 
     //sample object being created from the form. 
-    create.pin = {
-      // user: currentUser.uid,
-      name: "", 
-      imageUrl: "", 
-      desc: "", 
-      board: "" //this will be the board ID, not a board name.
-    };
+    // create.pin = {
+    //   user: "",
+    //   name: "", 
+    //   imageUrl: "", 
+    //   desc: "", 
+    //   board: "" //this will be the board ID, not a board name.
+    // };
 
     create.sendPin = function() {
-      console.log("sendPin Function", create.pin);
-      
+        //constructing the object with the User ID. would like to move to the factory in V2. 
+      const currentUser = AuthFactory.getUser();
+      create.pin.user = currentUser.uid;
+      create.pin.userName= currentUser.username;
+      console.log("current object", create.pin);
+
       newPinFactory.postNewPin(create.pin)
         .then(() => {$location.path("#/pins");});  
     }; //end of sendPin
@@ -39,4 +36,3 @@ angular.module("sports")
     };//end of cancelPin
 
   });//end of controller
-
