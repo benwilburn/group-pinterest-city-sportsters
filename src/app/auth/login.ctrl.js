@@ -1,4 +1,5 @@
 angular.module('sports')
+
 	.controller('LoginCtrl', function($location, AuthFactory) {
 		const auth = this;
 
@@ -15,5 +16,4 @@ angular.module('sports')
         .then(() => {$location.path('/pins')})
         .catch((error) => alert(error));
     }
-
 	})
