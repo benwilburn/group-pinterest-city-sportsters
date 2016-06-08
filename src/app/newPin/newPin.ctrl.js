@@ -18,7 +18,7 @@ angular.module("sports")
       name: "", 
       url: "", 
       desc: "", 
-      board: "" //this will be the board ID, not a board name.
+      board: "" //newBoardFactory.giveMegantheBoard
     };
 
     create.sendPin = function() {

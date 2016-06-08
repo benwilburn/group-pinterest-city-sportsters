@@ -13,3 +13,12 @@ angular.module('sports')
       // or server returns response with an error status.
     });
 })
+
+
+  //send new board function. this POSTS to the board object. 
+  //get the boards function. put both functions inside the return object- so it needs to say return {
+  //
+  //postNewBoard: function(boardToPost) {
+  //}
+  //giveMeganTheBoardObjects <--this is where the function you've already written goes. 
+  //}
