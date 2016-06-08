@@ -1,5 +1,24 @@
-<h1>Login</h1>
+<div class="container">
+  <div class="row">
+    <div class="col l6 offset-l3">
+      <h1>Login</h1>
 
-<form ng-submit="auth.login()">
-  <button type="submit" class="btn">Login</button>
-</form>
+      <form ng-submit="auth.login()">
+        <div class="input-field">
+          <label for="username">If this is your first time, create a username here</label>
+          <input type="text" name="username" id="username" ng-model="auth.user.username" />
+        </div>
+        <div class="input-field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" ng-model="auth.user.email" />
+        </div>
+        <div class="input-field">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" ng-model="auth.user.password" />
+        </div>
+        <a href="" class="btn yellow darken-2" ng-click="auth.register()">Register</a>
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

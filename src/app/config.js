@@ -2,15 +2,9 @@ angular.module("sports")
 	.config(($routeProvider) => {
   $routeProvider
 		// Authentication routes
-
     .when("/", {
       templateUrl: "app/auth/login.html",
       controller: "LoginCtrl",
-      controllerAs: "auth"
-    })
-    .when("/logout", {
-      template: "",
-      controller: "LogoutCtrl",
       controllerAs: "auth"
     })
 			// Pin display route
