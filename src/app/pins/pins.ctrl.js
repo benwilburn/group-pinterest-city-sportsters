@@ -1,10 +1,16 @@
 /* jshint esversion:6 */
 angular.module('sports')
-  .controller('PinCtrl', function (PinsFactory, userAuth) {
+  .controller('PinCtrl', function (PinsFactory, userAuth, $location) {
     let pins = this;
 
-    let currentAuth = userAuth;
-    console.log("currentAuth: ", currentAuth);
+    console.log("userAuth: ", userAuth);
+
+    pins.currentAuth = userAuth;
+    console.log("currentAuth: ", pins.currentAuth);
+
+    pins.goToEdit = function(keyPath) {
+      $location.path(`/pins/edit/${keyPath}`)
+    }
 
     PinsFactory.getPins()
       .then(response => {
