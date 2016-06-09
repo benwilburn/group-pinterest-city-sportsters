@@ -14,11 +14,13 @@
         <span class="card-title activator">{{items.name}}<i class="material-icons right">description</i></span>
       </div>
       <div class="card-reveal">
-      <span class="card-title">Card Title<i class="material-icons right">close</i></span>
+
+      <span class="card-title">{{items.name}}<i class="material-icons right">close</i></span>
         <p>Board: {{items.boardName}}</p>
         <p ng-model="description">Description: {{items.desc}}</p>
         <p>Created by: <div class="chip">{{items.userName}}</div></p>
-        <a href="#/pins/edit/{{items.key}}" class="btn" title="button">Edit</a>
+        <button ng-click="pins.goToEdit(items.key)" class="btn" title="button" ng-disabled="!(pins.currentAuth.uid === items.user)" ng-class="!(pins.currentAuth.uid === items.user) ? 'disabled' : ''">Edit</button>
+        <button ng-click="pins.deletePin(items.key, $index)" class="btn red lighten-1" title="button" ng-disabled="!(pins.currentAuth.uid === items.user)" ng-class="!(pins.currentAuth.uid === items.user) ? 'disabled' : ''">Delete</button>
       </div>
     </div>
   </div>
