@@ -25,11 +25,13 @@ angular.module('sports')
         // console.log("response", response);
         pins.pinCards = response.pins;
         for(var items in response.pins){
+          response.pins[items].key = items;
           pins.pinCardsArray.push(response.pins[items]);
 
           // pins.pinCardsArray.push();
         }
         $scope.cardArray = pins.pinCardsArray;
+        console.log("$scope.cardArray", $scope.cardArray)
 
 
       });
