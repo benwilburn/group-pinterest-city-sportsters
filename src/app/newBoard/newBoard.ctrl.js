@@ -3,12 +3,6 @@ angular.module("sports")
     const board = this;
     $scope.title = "Create A New Board";
 
-    //sample object being created from the form.
-    // board.board = {
-    //   user: "", //authFactory.getUser(token)
-    //   name: ""
-    // };
-
     board.sendBoard = function() {
       const currentUser = AuthFactory.getUser();
       board.board.user = currentUser.uid;
@@ -17,14 +11,13 @@ angular.module("sports")
 
       newBoardFactory.postNewBoard(board.board)
         .then(() => {$location.path("/pins");});
-    }; //end of sendBoard
+    }; //end-sendBoard
 
     board.cancelBoard = function() {
-      console.log("cancelBoard function");
       $location.path("/pins");
-    };//end of cancelBoard
+    };//end -cancelBoard
 
-  });//end of controller
+  });//end-controller
 
 
 
