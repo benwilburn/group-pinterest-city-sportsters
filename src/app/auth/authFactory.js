@@ -1,5 +1,5 @@
 angular.module('sports')
-  .factory('AuthFactory', function($http){
+  .factory('AuthFactory', function($http, $q){
 
     let currentUser = null;
 
@@ -47,6 +47,10 @@ angular.module('sports')
         } else {
             return currentUser;
           }
+      },
+
+      getUserAuth: function() {
+        return $q.when(firebase.auth().currentUser);
       }
 
     }

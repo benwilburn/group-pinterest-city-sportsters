@@ -19,7 +19,12 @@ angular.module("sports")
     .when("/pins", {
       templateUrl: "app/pins/pins.html",
       controller: "PinCtrl",
-      controllerAs: "pins"
+      controllerAs: "pins",
+      resolve: {
+        userAuth: function(AuthFactory) {
+          return AuthFactory.getUserAuth();
+        }
+      }
     })
 			// Pin create/edit routes
     .when("/pins/new", {
