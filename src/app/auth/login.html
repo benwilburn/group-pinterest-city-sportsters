@@ -5,15 +5,15 @@
 
       <form ng-submit="auth.login()">
         <div class="input-field">
-          <label for="username">If this is your first time, create a username here</label>
+          <label for="username"><i class="tiny material-icons">label</i>If this is your first time, create a username here</label>
           <input type="text" name="username" id="username" ng-model="auth.user.username" />
         </div>
         <div class="input-field">
-          <label for="email">Email</label>
+          <label for="email"><i class="tiny material-icons">label</i>Email</label>
           <input type="email" name="email" id="email" ng-model="auth.user.email" />
         </div>
         <div class="input-field">
-          <label for="password">Password</label>
+          <label for="password"><i class="tiny material-icons">label</i>Password</label>
           <input type="password" name="password" id="password" ng-model="auth.user.password" />
         </div>
         <a href="" class="btn yellow darken-2" ng-click="auth.register()">Register</a>
