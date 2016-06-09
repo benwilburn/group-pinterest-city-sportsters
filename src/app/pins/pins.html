@@ -1,27 +1,37 @@
-<h1>Pins Page</h1>
+<div class="container">
+  <h1>Pins Page</h1>
+  <a href="#/pins/new" class="btn">New Pin</a>
+  <a href="#/board/new" class="btn">New Board</a>
+  <input type="text" placeholder="What Are You Searching For?" ng-model="search">
+</div>
 <div class="row">
-  <div class="col s12 m6 l3" ng-repeat="(key, items) in pins.pinCards">
-    <div class="card small">
+  <div class="col s12 m6 l3" ng-repeat="(key, items) in cardArray | filter: search | filter: description">
+    <div class="card small light-blue darken-1">
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" ng-src="{{items.imageUrl}}">
       </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">{{items.name}}<i class="material-icons right">more_vert</i></span>
+      <div class="card-content white-text">
+        <span class="card-title activator">{{items.name}}<i class="material-icons right">description</i></span>
       </div>
       <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">{{items.name}}<i class="material-icons right">close</i></span>
+
+      <span class="card-title">Card Title<i class="material-icons right">close</i></span>
         <p>Board: {{items.boardName}}</p>
-        <p>Description: {{items.desc}}</p>
-        <p>Created by: {{items.userName}}</p>
+        <p ng-model="description">Description: {{items.desc}}</p>
+        <p>Created by: <div class="chip">{{items.userName}}</div></p>
         <button ng-click="pins.goToEdit(key)" class="btn" title="button" ng-disabled="!(pins.currentAuth.uid === items.user)" ng-class="!(pins.currentAuth.uid === items.user) ? 'disabled' : ''">Edit</button>
-        <button ng-click="pins.deletePin(key)" class="btn red lighten-1" title="button" ng-disabled="!(pins.currentAuth.uid === items.user)" ng-class="!(pins.currentAuth.uid === items.user) ? 'disabled' : ''">Delete</button>
+        <button ng-click="pins.deletePin(key, $index)" class="btn red lighten-1" title="button" ng-disabled="!(pins.currentAuth.uid === items.user)" ng-class="!(pins.currentAuth.uid === items.user) ? 'disabled' : ''">Delete</button>
       </div>
     </div>
   </div>
 </div>
-<footer>
-<a href="#/pins/new" class="btn">New Pin</a>
+<footer class="page-footer">
+  <div class="container">
+    <div class="footer-copyright">
+      © 2014 Copyright Text
+
+    </div>
+  </div>
 <!-- <a href="#/board/edit/{{}}" class="btn">Edit Board</a> -->
-<a href="#/board/new" class="btn">New Board</a>
 </footer>
 
