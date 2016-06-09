@@ -5,7 +5,7 @@
   <input type="text" placeholder="What Are You Searching For?" ng-model="search">
 </div>
 <div class="row">
-  <div class="col s12 m6 l3" ng-repeat="(key, items) in cardArray | filter: search | filter: description">
+  <div class="col s12 m6 l3" ng-repeat="items in cardArray | filter: search | filter: description">
     <div class="card small light-blue darken-1">
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" ng-src="{{items.imageUrl}}">
@@ -18,7 +18,7 @@
         <p>Board: {{items.boardName}}</p>
         <p ng-model="description">Description: {{items.desc}}</p>
         <p>Created by: <div class="chip">{{items.userName}}</div></p>
-        <a href="#/pins/edit/{{key}}" class="btn" title="button">Edit</a>
+        <a href="#/pins/edit/{{items.key}}" class="btn" title="button">Edit</a>
       </div>
     </div>
   </div>
