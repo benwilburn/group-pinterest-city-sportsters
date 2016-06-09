@@ -1,6 +1,6 @@
 /* jshint esversion:6 */
 angular.module('sports')
-  .controller('PinCtrl', function (PinsFactory, userAuth, $location) {
+  .controller('PinCtrl', function (PinsFactory, userAuth, $location, $http) {
     let pins = this;
 
     console.log("userAuth: ", userAuth);
@@ -10,6 +10,12 @@ angular.module('sports')
 
     pins.goToEdit = function(keyPath) {
       $location.path(`/pins/edit/${keyPath}`)
+    }
+
+    pins.deletePin = function(itemId) {
+      $http.delete(`https://project-907408699296850865.firebaseio.com/pins/${itemId}.json`)
+        .then(() => {delete pins.pinCards[itemId]})
+        .catch((error) => (console.log(error)))
     }
 
     PinsFactory.getPins()
