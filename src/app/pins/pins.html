@@ -14,6 +14,7 @@
         <p>Description: {{items.desc}}</p>
         <p>Created by: {{items.userName}}</p>
         <button ng-click="pins.goToEdit(key)" class="btn" title="button" ng-disabled="!(pins.currentAuth.uid === items.user)" ng-class="!(pins.currentAuth.uid === items.user) ? 'disabled' : ''">Edit</button>
+        <button ng-click="pins.deletePin(key)" class="btn red lighten-1" title="button" ng-disabled="!(pins.currentAuth.uid === items.user)" ng-class="!(pins.currentAuth.uid === items.user) ? 'disabled' : ''">Delete</button>
       </div>
     </div>
   </div>
