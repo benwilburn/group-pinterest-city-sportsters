@@ -1,0 +1,76 @@
+<h1 ng-model="$scope.title">{{title}}</h1>
+<div class="container">
+  <div class="row">
+    <form name="boardForm" ng-submit="board.sendBoard()">
+
+      <!-- Board Name -->
+      <div class="row">
+        <div class="input-field col s12">
+          <form ng-submit="board.addNewBoard()">
+            <input id="boardName" type="text" name="boardName" ng-model="board.board.name">
+            <label for="boardName">Board Name</label>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 offset-s5">
+        <button ng-click="board.cancelBoard()" class="btn">Cancel</button>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+      <!-- Pin Board -->
+<!--       <div class="row">
+        <div class="input-field col s2">
+          <label for="boards">Select a Board</label>
+        </div>
+        <div class="input-field col s10">
+          <select id="boards" ng-model="board.pin.board">
+            <option ng-repeat="board in board.boards" value="{{board}}">{{board}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col s12 offset-s5">
+      <button ng-click="board.cancelBoard()" class="btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  <form ng-submit="board.addNewBoard()">
+    <label>
+    <input ng-model="board.name">
+  </form> -->
+
+<!-- title that says add a new board
+form text input that say board name. ng-model = "board.name"
+a submit button-->
+
+
+
+
+
+
+
+
+
+
